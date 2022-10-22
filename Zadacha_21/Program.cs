@@ -7,7 +7,7 @@ double Distance(int x1, int y1, int z1, int x2, int y2, int z2)
 {
     double h = 0;
     h = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
-    h = Math.Round(h, 2);
+    h = Math.Round(h, 2);  //округление до второго знака после запятой
     return h;
 }
 
