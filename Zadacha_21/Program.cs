@@ -3,28 +3,23 @@
 // А(3, 6, 8); B(2, 1, -7) -> 15,84
 // А(7, -5, 0); B(1, -1, 9) -> 11,53
 
-string Palindrome(int num)
+double Distance(int x1, int y1, int z1, int x2, int y2, int z2)
 {
-    string text = "";
-    //int a = num / 1000;
-    //int b = num % 100;
-    int a1 = (num / 1000) / 10;
-    int a2 = (num / 1000) % 10;
-    int a4 = (num % 100) / 10;
-    int a5 = (num % 100) % 10;
-    if (a1 == a5 && a2 == a4 && num > 0)
-    {
-        text = "Число является палиндромом.";
-    }
-    else
-    {
-        text = "Число не является палиндромом.";
-    }
-    return text;
+    double h = 0;
+    h = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
+    h = Math.Round(h, 2);
+    return h;
 }
 
-Console.WriteLine("Введите пятизначное число: ");
-int fiveNum = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите поочередно координаты (X, Y, Z) первой точки: ");
+int x1 = Convert.ToInt32(Console.ReadLine());
+int y1 = Convert.ToInt32(Console.ReadLine());
+int z1 = Convert.ToInt32(Console.ReadLine());
 
-string result = Palindrome(fiveNum);
+Console.WriteLine("Введите поочередно координаты (X, Y, Z) второй точки: ");
+int x2 = Convert.ToInt32(Console.ReadLine());
+int y2 = Convert.ToInt32(Console.ReadLine());
+int z2 = Convert.ToInt32(Console.ReadLine());
+
+double result = Distance(x1, y1, z1, x2, y2, z2);
 Console.WriteLine(result);
