@@ -6,12 +6,12 @@
 string Palindrome(int num)
 {
     string text = "";
-    int a = num / 1000;
-    int b = num % 100;
-    int a1 = a / 10;
-    int a2 = a % 10;
-    int a4 = b / 10;
-    int a5 = b % 10;
+    //int a = num / 1000;
+    //int b = num % 100;
+    int a1 = (num / 1000) / 10;
+    int a2 = (num / 1000) % 10;
+    int a4 = (num % 100) / 10;
+    int a5 = (num % 100) % 10;
     if (a1 == a5 && a2 == a4 && num > 0)
     {
         text = "Число является палиндромом.";
